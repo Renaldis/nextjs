@@ -166,3 +166,7 @@ a.secondary {
     filter: invert();
   }
 }
+
+.footer_new {
+  background-color: greenyellow;
+}

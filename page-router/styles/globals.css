@@ -1,4 +1,6 @@
-:root {
+@import "tailwindcss";
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -40,3 +42,8 @@ a {
     color-scheme: dark;
   }
 }
+
+
+.header {
+  background-color: blue;
+} */
