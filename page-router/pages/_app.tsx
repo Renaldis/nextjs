@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const metaTitle =
     router.pathname === "/" ? "Home" : router.pathname.replace("/", "");
 
-  console.log(router);
+  // console.log(router);
   return (
     <>
       <RootLayout metaTitle={metaTitle}>
