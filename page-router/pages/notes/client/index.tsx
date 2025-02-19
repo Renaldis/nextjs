@@ -10,11 +10,11 @@ type NotesList = {
   updated_at: string;
 };
 
-type Notes = {
-  success: boolean;
-  message: string;
-  data: NotesList[];
-};
+// type Notes = {
+//   success: boolean;
+//   message: string;
+//   data: NotesList[];
+// };
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 

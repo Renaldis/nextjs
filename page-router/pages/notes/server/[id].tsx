@@ -32,11 +32,9 @@ export default function NotesServerPage({
     return <p className="text-center text-red-500">Note not found.</p>;
   }
   return (
-    <div className="p-4">
-      <div className="p-4 bg-white shadow-sm rounded-lg">
-        <h1>{notes.data.title}</h1>
-        <p>{notes.data.description}</p>
-      </div>
+    <div className="p-4 bg-white shadow-sm rounded-lg">
+      <h1>{notes.data.title}</h1>
+      <p>{notes.data.description}</p>
     </div>
   );
 }

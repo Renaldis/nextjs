@@ -27,24 +27,21 @@ export default function NotesServerPage({
   notes,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <div>
-      <h3 className="text-center text-2xl mb-4">NotesServerPage</h3>
-      <div className="grid grid-cols-4 gap-4">
-        {notes?.data.length > 0 ? (
-          notes.data.map((note: NotesList) => (
-            <Link
-              href={`/notes/server/${note.id}`}
-              key={note.id}
-              className="p-4 bg-white shadow-sm rounded-lg"
-            >
-              <h1>{note.title}</h1>
-              <p>{note.description}</p>
-            </Link>
-          ))
-        ) : (
-          <p className="text-center col-span-4">No notes available.</p>
-        )}
-      </div>
+    <div className="grid grid-cols-4 gap-4">
+      {notes?.data.length > 0 ? (
+        notes.data.map((note: NotesList) => (
+          <Link
+            href={`/notes/server/${note.id}`}
+            key={note.id}
+            className="p-4 bg-white shadow-sm rounded-lg"
+          >
+            <h1>{note.title}</h1>
+            <p>{note.description}</p>
+          </Link>
+        ))
+      ) : (
+        <p className="text-center col-span-4">No notes available.</p>
+      )}
     </div>
   );
 }
