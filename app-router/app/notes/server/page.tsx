@@ -1,3 +1,6 @@
+import Link from "next/link";
+import CreateForm from "./create";
+
 type ListNotes = {
   id: string;
   title: string;
@@ -22,10 +25,22 @@ async function getNotes() {
 export default async function Notes() {
   const notes = await getNotes();
   return (
-    <ul>
-      {notes.data.map((note: ListNotes) => {
-        return <li key={note.id}>{note.title}</li>;
-      })}
-    </ul>
+    <>
+      <CreateForm />
+      <div className="grid grid-cols-4 gap-4 ">
+        {notes.data.map((note: ListNotes) => {
+          return (
+            <Link
+              href={`/notes/server/${note.id}`}
+              key={note.id}
+              className="p-4 bg-white shadow-sm rounded-lg"
+            >
+              <h1>{note.title}</h1>
+              <p>{note.description}</p>
+            </Link>
+          );
+        })}
+      </div>
+    </>
   );
 }
