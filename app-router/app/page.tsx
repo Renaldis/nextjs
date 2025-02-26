@@ -1,7 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
+// import { useCount } from "@/context";
+import { dataStore } from "@/store/dataStore";
 
 export default function Home() {
+  // const { setCount } = useCount();
+  const { inc, count } = dataStore();
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -9,6 +15,14 @@ export default function Home() {
           <li>Welcome to the course</li>
           <li>
             <h1 className="text-3xl font-bold underline">Hello world!</h1>
+          </li>
+          <li>
+            <button
+              onClick={() => inc()}
+              className="border rounded-full bg-slate-200 cursor-pointer active:bg-slate-400 p-2"
+            >
+              Increment++
+            </button>
           </li>
         </ol>
       </main>
