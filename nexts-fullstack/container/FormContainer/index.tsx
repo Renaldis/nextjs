@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   Form,
   FormControl,
@@ -8,7 +9,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import useFormAction, { formSchema, formType } from "@/hooks/useFormAction";
+import useFormAction from "@/hooks/useFormAction";
+import { formType } from "@/hooks/useFormAction";
 import { useState } from "react";
 
 export default function FormContainer({
@@ -60,7 +62,7 @@ export default function FormContainer({
             <FormItem>
               <FormLabel>Title</FormLabel>
               <FormControl>
-                <Input placeholder="Title ..." {...field} />
+                <Input placeholder="title ..." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -73,14 +75,14 @@ export default function FormContainer({
             <FormItem>
               <FormLabel>Url</FormLabel>
               <FormControl>
-                <Input placeholder="Url ..." {...field} />
+                <Input placeholder="url ..." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
         <Button type="submit" disabled={loading}>
-          {loading ? "Loading..." : "Submit"}
+          {loading ? "Loading ..." : "Submit"}
         </Button>
       </form>
     </Form>
